@@ -8,7 +8,10 @@ class Main extends openfl.display.Sprite
 	{
 		super();
 
-		addChild(new flixel.FlxGame(0, 0, substates.Start));
+		final multiplier = 2;
+		var stage = openfl.Lib.current.stage;
+
+		addChild(new flixel.FlxGame(Std.int(stage.stageWidth / multiplier), Std.int(stage.stageHeight / multiplier), substates.Start, 60, 60, true));
 		addChild(new Objects.FPSCounter());
 
 		#if sys

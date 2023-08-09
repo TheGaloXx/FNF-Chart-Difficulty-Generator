@@ -5,13 +5,14 @@
 	<app title="FNF Chart Difficulty Generator" file="Chart Generator" main="Main"/>
 	<app company="HaxeFlixel" unless="NO_FLXSAVE"/>
 
-	<window width="1280" height="720" fps="" background="#ffffff" hardware="true" vsync="false" fullscreen="false" resizable="false" orientation="landscape"/>
+	<window width="1280" height="720" fps="" background="#66668d" hardware="true" vsync="false" fullscreen="false" resizable="false" orientation="landscape"/>
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
 
 	<source path="source" />
+	<assets path="charts" />
 
 	<haxedef name="FLX_NO_TOUCH"/>
 	<haxedef name="FLX_NO_GAMEPAD" />
