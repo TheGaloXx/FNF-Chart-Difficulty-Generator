@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ```[version] - day-month-year```
 
+## [0.0.3] - 9-8-2023
+Added FNF default font.
+Now you can see chart's info when loading it.
+
+
 ## [0.0.2] - 9-8-2023
 Added basic files detecting system.
 Other settings.

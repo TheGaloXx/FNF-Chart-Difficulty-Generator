@@ -10,7 +10,7 @@ class Start extends flixel.FlxState
 		saveCompiles();
 		#end
 
-		// flixel.system.FlxAssets.FONT_DEFAULT = Paths.font('Storytime.ttf', PRELOAD);
+		// flixel.system.FlxAssets.FONT_DEFAULT = 'extras/vcr.ttf';
 		FlxG.worldBounds.set(0, 0);
 		FlxG.mouse.visible = FlxG.mouse.enabled = true;
 

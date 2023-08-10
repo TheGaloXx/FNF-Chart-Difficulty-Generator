@@ -1,7 +1,10 @@
 package;
 
 import flixel.FlxG;
+import flixel.text.FlxText;
 import flixel.util.FlxColor;
+
+using StringTools;
 
 // THIS IS A MODIFICATION OF THE OPENFL FPS CLASS
 
@@ -63,5 +66,45 @@ class Error extends flixel.text.FlxText
 			startDelay: 2,
 			onComplete: function(_)  destroy()
 		});
+	}
+}
+
+class Text extends FlxText
+{
+	public var lerpText:String;
+	private var timer:Float = 0;
+
+	public function new(X:Float, Y:Float, Width:Float, Text:String, Size:Int = 16, Alignment:FlxTextAlign = CENTER, Color:FlxColor = FlxColor.WHITE, ?BorderStyle:FlxTextBorderStyle = OUTLINE, BorderColor:FlxColor = FlxColor.BLACK, BorderSize:Float = 1.5)
+	{
+		super(X, Y, Width, Text, Size);
+
+		font = 'extras/vcr.ttf';
+		color = Color;
+		
+		if (Width > 0)
+		{
+			autoSize = false;
+			alignment = Alignment;
+		}
+
+		setBorderStyle(BorderStyle, BorderColor, BorderSize);
+
+		scrollFactor.set();
+	}
+
+	override public function update(elapsed:Float):Void
+	{
+		// super.update(elapsed);
+
+		if (lerpText != null && lerpText.length > 0)
+		{
+			timer += elapsed;
+			if (timer >= 0.025)
+			{
+				timer = 0;
+				text += lerpText.charAt(0);
+				lerpText = lerpText.substr(1, lerpText.length - 1);
+			}
+		}
 	}
 }
