@@ -13,7 +13,7 @@
 
 	<source path="source" />
 	<assets path="charts" />
-	<assets path="extras" />
+	<assets path="extras" embed="true"/>
 	<assets path='extras/LICENSE' rename='LICENSE.txt' />
 
 	<haxedef name="FLX_NO_TOUCH"/>

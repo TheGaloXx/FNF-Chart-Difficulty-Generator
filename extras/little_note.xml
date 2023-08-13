@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="little_note.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="little_note0000" x="5" y="5" width="68" height="71" frameX="-1" frameY="0" frameWidth="71" frameHeight="71"/>
+	<SubTexture name="little_note0001" x="78" y="5" width="70" height="69" frameX="0" frameY="-1" frameWidth="71" frameHeight="71"/>
+	<SubTexture name="little_note0002" x="153" y="5" width="70" height="69" frameX="-1" frameY="-1" frameWidth="71" frameHeight="71"/>
+	<SubTexture name="little_note0003" x="228" y="5" width="69" height="71" frameX="-1" frameY="0" frameWidth="71" frameHeight="71"/>
+</TextureAtlas>

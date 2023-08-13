@@ -1,0 +1,13 @@
+Song:song
+BPM:bpm
+Scroll speed:speed
+Aprox. Duration:duration
+:
+Notes:notesCount
+Hold notes:susCount
+Hold note slides:susSlices
+Total notes:totalNotes
+:
+Sections:sectionsCount
+Average sec. notes:averageCount
+:

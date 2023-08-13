@@ -23,7 +23,7 @@ class Start extends flixel.FlxState
 			#end
 		});
 
-		FlxG.switchState(new menus.PlayState());
+		FlxG.switchState(new menus.SplashScreen());
 
 		super.create();
 	}
