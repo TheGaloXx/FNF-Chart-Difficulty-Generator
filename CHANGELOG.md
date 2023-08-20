@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ```[version] - day-month-year```
 
+## [0.0.6] - 19-8-2023
+Now you can click the notes on the start screen lol.
+
+
 ## [0.0.5] - 19-8-2023
 Added Json data saving.
 Added BG backdrop.

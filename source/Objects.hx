@@ -180,10 +180,20 @@ class Note extends FlxSprite
 		updateMotion(elapsed);
 
 		if (getScreenPosition().y < -height) kill();
+
+		if (FlxG.mouse.overlaps(this) && (FlxG.mouse.justPressed || FlxG.mouse.justPressedRight))
+		{
+			active = false;
+			alpha = 1;
+			scale.x -= 0.05;
+			scale.y -= 0.05;
+			FlxTween.tween(this, {"scale.x": 1, "scale.y": 1, alpha: 0}, 1, {ease: FlxEase.sineOut, onComplete: function(_) kill()});
+		}
 	}
 
 	public function setup():Void
 	{
+		active = true;
 		animation.play('' + FlxG.random.int(0, 3));
 
 		alpha = FlxG.random.float(0.25, 0.9);
@@ -193,5 +203,7 @@ class Note extends FlxSprite
 		// acceleration.y = FlxG.random.int(-50, -125);
 		angularVelocity = FlxG.random.int(-365, 365);
 		scrollFactor.set(FlxG.random.float(0.2, 1.5), FlxG.random.float(0.2, 1.5));
+
+		updateHitbox();
 	}
 }
