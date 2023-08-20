@@ -16,6 +16,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
+import substates.PopupSubstate;
 import sys.*;
 
 using StringTools;
@@ -47,7 +48,7 @@ class PlayState extends FlxUIState
 
 		loadCharts();
 		addUI();
-		addError('');
+		for (i in 0...10) addError('');
 		setInfo();
 
 		FlxG.camera.fade(FlxColor.BLACK, 0.75, true);
@@ -90,7 +91,7 @@ class PlayState extends FlxUIState
 					Data.saveData();
 					Main.changeFPS(Data.data.settings.fps);
 				case 'Speed reduction:':
-					var chart = new Chart(); Chart.getData(chartsDrop.selectedLabel, chart);
+					var chart = new Chart(chartsDrop.selectedLabel);
 
 					trace('Chart speed: ${chart.data.speed} - Speed reduction: ${nums.value} - Is lower: ${chart.data.speed - 0.1 < nums.value}');
 					if (chart.data.speed - 0.1 < nums.value)
@@ -119,7 +120,7 @@ class PlayState extends FlxUIState
 			chartsList.push(song); 
 		}
 
-		trace('Charts list: ' + chartsList + ' - length: ' + chartsList.length);
+		trace('Charts list length: ' + chartsList.length);
 
 		if (chartsList.length <= 0)
 		{
@@ -147,8 +148,7 @@ class PlayState extends FlxUIState
 		}
 
 		// Get chart's info
-		var chart = new Chart();
-		Chart.getData(chartsDrop.selectedLabel, chart);
+		var chart = new Chart(chartsDrop.selectedLabel);
 
 		// Get properties to load
 		var dumbFile = Utils.textFile('extras/chart data.txt');
@@ -160,7 +160,7 @@ class PlayState extends FlxUIState
 			var data:Array<String> = dumbFile[i].split(':');
 
 			var songExclude = ['bpm', 'scroll speed', 'aprox. duration'];
-			var noteExclude = ['notes', 'hold notes', 'hold note slides'];
+			var noteExclude = ['notes', 'hold notes', 'hold note slides', 'double notes'];
 			var sectionExclude = ['average sec. notes'];
 
 
@@ -231,8 +231,6 @@ class PlayState extends FlxUIState
 
 	private function addSettings():Void
 	{
-		trace(Data.data.settings);
-
 		var settingsTab = new FlxUI(null, box);
 		settingsTab.name = "Settings";
 
@@ -359,7 +357,7 @@ class PlayState extends FlxUIState
 
 		var check = new FlxButton(10, 0, 'Generate', function ()
 		{
-			trace('Generating chart');
+			openSubState(new PopupSubstate(chartsDrop.selectedLabel, reduction.value, notesReductionStepper.value, checkDoubles.checked));
 		});
 		check.y = box.height - (check.height * 2) - 5;
 		generatorTab.add(check);

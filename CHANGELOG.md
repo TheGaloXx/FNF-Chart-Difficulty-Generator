@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ```[version] - day-month-year```
 
+## [0.0.7] - 20-8-2023
+Added double notes display.
+Cleaned a bit Chart.hx's code.
+Added chart exporting and saving.
+Added "chart generator" substate with info and stuff.
+Now that I have the UI and visuals done, let's start to actually make it work.
+
+
 ## [0.0.6] - 19-8-2023
 Now you can click the notes on the start screen lol.
 

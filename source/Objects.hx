@@ -88,8 +88,8 @@ class Error extends Text
 	{
 		super.update(elapsed);
 
-		floatThing += elapsed * 10;
-		if (scale.x == 1 && scale.y == 1 && alpha == 1) y += Math.sin(floatThing);
+		floatThing += elapsed;
+		if (scale.x == 1 && scale.y == 1 && alpha == 1) y += Math.sin(floatThing) * elapsed * 15;
 	}
 }
 
@@ -173,9 +173,9 @@ class Note extends FlxSprite
 	{
 		//super.update(elapsed);
 
-		time += (elapsed * 10) * random;
+		time += elapsed * random;
 
-		x += Math.sin(time);
+		x += Math.sin(time) * elapsed * 75;
 
 		updateMotion(elapsed);
 
@@ -183,6 +183,7 @@ class Note extends FlxSprite
 
 		if (FlxG.mouse.overlaps(this) && (FlxG.mouse.justPressed || FlxG.mouse.justPressedRight))
 		{
+			FlxTween.cancelTweensOf(this);
 			active = false;
 			alpha = 1;
 			scale.x -= 0.05;

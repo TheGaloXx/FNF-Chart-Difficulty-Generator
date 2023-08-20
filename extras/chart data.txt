@@ -6,6 +6,7 @@ Aprox. Duration:duration
 Notes:notesCount
 Hold notes:susCount
 Hold note slides:susSlices
+Double notes:doublesCount
 Total notes:totalNotes
 :
 Sections:sectionsCount
