@@ -7,14 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ```[version] - day-month-year```
 
-## [0.0.4] - 10-8-2023
+## [0.0.5] - 19-8-2023
+Added Json data saving.
+Added BG backdrop.
+Added settings.
+Added UI tabs.
+
+
+## [0.0.4] - 12-8-2023
 Added cool start screen.
 More chart's info is shown.
 Added error messages.
 Simplified chart properties setting.
 
 
-## [0.0.3] - 19-8-2023
+## [0.0.3] - 9-8-2023
 Added FNF default font.
 Now you can see chart's info when loading it.
 

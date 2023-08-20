@@ -1,5 +1,7 @@
 package;
 
+import flixel.FlxG;
+
 using StringTools;
 
 class Main extends openfl.display.Sprite
@@ -62,4 +64,19 @@ class Main extends openfl.display.Sprite
 		Sys.exit(1);
 	}
 	#end
+
+	// Code by Sanco
+	public static function changeFPS(cap:Int)
+	{
+		if (cap > FlxG.drawFramerate)
+		{
+			FlxG.updateFramerate = cap;
+			FlxG.drawFramerate = cap;
+		}
+		else
+		{
+			FlxG.drawFramerate = cap;
+			FlxG.updateFramerate = cap;
+		}
+	}
 }

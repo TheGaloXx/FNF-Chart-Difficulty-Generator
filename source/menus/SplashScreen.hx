@@ -97,7 +97,6 @@ class SplashScreen extends flixel.FlxState
 
     private function spawnNote():Void
     {
-        trace('Spawning note! Group members: ${notes.members.length}');
         var daNote = notes.recycle(Note.new);
         daNote.setup();
         notes.add(daNote);

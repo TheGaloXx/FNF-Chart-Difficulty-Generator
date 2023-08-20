@@ -13,9 +13,11 @@ class Start extends flixel.FlxState
 		// flixel.system.FlxAssets.FONT_DEFAULT = 'extras/vcr.ttf';
 		FlxG.worldBounds.set(0, 0);
 		FlxG.mouse.visible = FlxG.mouse.enabled = true;
+		FlxG.autoPause = false;
 
 		lime.app.Application.current.onExit.add(function(_) 
 		{
+			Data.saveData();
 			#if sys
 			Sys.exit(1);
 			#else
@@ -23,7 +25,11 @@ class Start extends flixel.FlxState
 			#end
 		});
 
-		FlxG.switchState(new menus.SplashScreen());
+		Data.check();
+		Data.getData();
+
+		if (Data.data.settings.skip) FlxG.switchState(new menus.PlayState());
+		else FlxG.switchState(new menus.SplashScreen());
 
 		super.create();
 	}

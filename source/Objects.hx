@@ -193,7 +193,5 @@ class Note extends FlxSprite
 		// acceleration.y = FlxG.random.int(-50, -125);
 		angularVelocity = FlxG.random.int(-365, 365);
 		scrollFactor.set(FlxG.random.float(0.2, 1.5), FlxG.random.float(0.2, 1.5));
-
-		trace(scale);
 	}
 }
